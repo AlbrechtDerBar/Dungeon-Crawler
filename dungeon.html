@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <script src="cells.js"></script>
+        <script src="rpg.js"></script>
+        <script src="maps.js"></script>
+        <script src="controls.js"></script>
+        <script src="script.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="settings" style="display: none;" class="main">
+            <div id="settingsButtons">
+                <button onclick="showControls()">Controls</button>
+                <button onclick="savePlayer()" >Save</button>
+                <a id="saveButton" style="display: none;"></a>
+                <button onclick="getFile()">Load</button>
+                <input type="file" id="loadButton"  onchange="loadPlayer(this)" style="display: none;" accept=".json">
+            </div>
+            <div id="controls" style="display: none;">
+                <h1>Controls:</h1>
+                <h2>Move up: <button onclick="changeControl(this.id)" id="up">&lt;⇧&gt;</button></h2>
+                <h2>Move right: <button onclick="changeControl(this.id)" id="right">&lt;⇨&gt;</button></h2>
+                <h2>Move down: <button onclick="changeControl(this.id)" id="down">&lt;⇩&gt;</button></h2>
+                <h2>Move left: <button onclick="changeControl(this.id)" id="left">&lt;⇦&gt;</button></h2>
+                <h2>Show map: <button onclick="changeControl(this.id)" id="map">&lt;M&gt;</button></h2>
+                <h2>Interact: <button onclick="changeControl(this.id)" id="interact">&lt;E&gt;</button></h2>
+                <h2>Inventory: <button onclick="changeControl(this.id)" id="inventory">&lt;I&gt;</button></h2>
+                <button onclick="showControls()">Back</button>
+            </div>
+        </div>
+
+        <div id="inventory-div" style="display: none;"  class="main">
+            <h2>Weapons:</h2>
+            <div id="weapons">
+                <form num = '0'>
+                    <input type="radio" id="weapon0" name="weapon" value="0" onchange="equip(this)">
+                    <label for="weapon0">Shiv +0</label><br>
+                    <input type="radio" id="weapon1" name="weapon" value="1" onchange="equip(this)" checked>
+                    <label for="weapon0">Sword of God +∞</label><br>
+                </form>
+            </div>
+            <h2>Armor</h2>
+            <div id="armor">
+                <form num = '0'>
+                    <input type="radio" id="armor0" name="armor" value="0" onchange="equip(this)">
+                    <label for="armor0">Rags +0</label><br>
+                    <input type="radio" id="armor0" name="armor" value="0" onchange="equip(this)" checked>
+                    <label for="armor0">Armor of God +∞</label><br>
+                </form>
+            </div>
+        </div>
+
+        <div id="renderedMap"  class="main">
+        </div>
+        <br>
+        <div id = "battle" style="display: none;"  class="main">
+            <table>
+                <tr>
+                    <td class="info" id="enemy3i"><a class="name"></a><a class="level"></a><table><tr><td class="health"></td></tr></table></td>
+                    <td class="spacer"></td>
+                    <td class="info" id="enemy2i"><a class="name"></a><a class="level"></a><table><tr><td class="health"></td></tr></table></td>
+                    <td class="spacer"></td>
+                    <td class="info" id="enemy1i"><a class="name"></a><a class="level"></a><table><tr><td class="health"></td></tr></table></td>
+                    <td class="spacer"></td>
+                    <td class="info" id="enemy0i"><a class="name"></a><a class="level"></a><table><tr><td class="health"></td></tr></table></td>
+                </tr>
+                <tr class="icons">
+                    <td id="enemy3p"></td>
+                    <td class="spacer"></td>
+                    <td id="enemy2p"></td>
+                    <td class="spacer"></td>
+                    <td id="enemy1p"></td>
+                    <td class="spacer"></td>
+                    <td id="enemy0p"></td>
+                </tr>
+                <tr id="enemySpacer">
+            
+                </tr>
+                <tr>
+                    <td class="info" id="hero0i"><a class="name"></a><a class="level"></a><table><tr><td class="health"></td></tr></table></td>
+                    <td class="spacer"></td>
+                    <td class="info" id="hero1i"><table><tr><td class="health"></td></tr></table></td>
+                    <td class="spacer"></td>
+                    <td class="info" id="hero2i"><table><tr><td class="health"></td></tr></table></td>
+                    <td class="spacer"></td>
+                    <td class="info" id="hero3i"><table><tr><td class="health"></td></tr></table></td>
+                </tr>
+                <tr class="icons">
+                    <td id="hero0p"></td>
+                    <td class="spacer"></td>
+                    <td id="hero1p"></td>
+                    <td class="spacer"></td>
+                    <td id="hero2p"></td>
+                    <td class="spacer"></td>
+                    <td id="hero3p"></td>
+            </table>
+            <div class="options" id="options1">
+                <ul style="list-style: none;" id="actionOptions">
+                    <li id="attack"><a>></a> Attack</li>
+                    <li id="magic"><a></a> Magic</li>
+                    <li id="items"><a></a> Items</li>
+                    <li id="run"><a></a> Run</li>
+                </ul>
+            </div>
+            <div class="options"  id="options2" style="display: none;">
+                <ul style="list-style: none;" id="attackOptions"></ul>
+            </div>
+            <div class="options"  id="options3" style="display: none;">
+                <ul style="list-style: none;" id="magicOptions"></ul>
+            </div>
+            <div class="options"  id="options4" style="display: none;">
+                <ul style="list-style: none;" id="itemOptions"></ul>
+            </div>
+        </div>
+        <br>
+        <div id="table-container" style="display: none;"  class="main">
+        </div>
+        <div id="loadImage">
+            <img src="./Img/enemy.png" alt="enemy">
+            <img src="./Img/Floor.png" alt="floor">
+            <img src="./Img/hero.png" alt="hero">
+            <img src="./Img/rat.gif" alt="rat">
+            <img src="./Img/Stairs_down.png" alt="Stairs_down">
+            <img src="./Img/Stairs_up.png" alt="Stairs_up">
+            <img src="./Img/Tengu.gif" alt="Tengu">
+            <img src="./Img/Wall.png" alt="wall">
+        </div>
+    </body>
+</html>

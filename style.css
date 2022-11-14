@@ -1,0 +1,48 @@
+td {
+    height: 48px;
+    width: 48px;
+    text-align: center;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+#loadImage {
+    display: none;
+}
+
+.health{
+    height: 20px;
+    border-radius: 5px;
+    width: 75px;
+}
+
+.spacer {
+    width: 3px;
+    height: 0px;
+    /* background: linear-gradient(); */
+}
+
+.info {
+    width: 75px;
+    height: 20px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+#enemySpacer {
+    height: 20px;
+}
+
+.level {
+    float: right;
+}
+
+.options {
+    width: 50%;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-top: 15px;
+    background-color: beige;
+}

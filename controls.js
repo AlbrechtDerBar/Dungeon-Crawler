@@ -391,11 +391,13 @@ function interact() {
 }
 
 function inventory() {
-    let inventory = document.getElementById("inventory-div")
+    let inventory = document.getElementById("inventory-div");
     if (inventory.style.display == 'none') {
+        loadInventory();
         focusDiv("inventory-div");
     }
     else {
+        unloadInventory();
         focusDiv("renderedMap");
     }
     

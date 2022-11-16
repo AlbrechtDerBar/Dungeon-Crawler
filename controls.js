@@ -364,7 +364,6 @@ function interact() {
             entities.push({entity: cardinalCells[3].entity, row: charPos.row, col: charPos.col-1});
         }
 
-        console.log(entities)
         if(entities.length > 1) {
             let enemies = entities.filter(e=>{return e.entity == 'e'});
             if(enemies.length == 0) {
@@ -381,11 +380,13 @@ function interact() {
             else if(entities[0].entity == 'e') {
                 battle(entities[0].row, entities[0].col);
             }
-            else if(reachedExit()) {
+        }
+        if(entities.length == 0 || entities.some(e => {return e.entity = "to"})) {
+            if(reachedExit()) {
                 newFloor();
             }
             else if(onSpawn()) {
-                console.log("exit Dungeon");
+                window.location = "index.html";
             }
         }
 }
@@ -462,6 +463,7 @@ function attack() {
             document.getElementById(`enemy${currentSelection.getAttribute("index")}p`).removeChild(document.getElementById(`enemy${currentSelection.getAttribute("index")}p`).firstChild);
         }
     }
+    // if player wins
     if(enemies.length == 0) {
         controlType = 0;
         player.addXp(battleXp);
@@ -479,12 +481,15 @@ function enemyTurn(enemy) {
     heatlhBar.innerText = `${player.currHealth}/${player.maxHealth}`;
     let healthLeft = (player.currHealth/player.maxHealth);
     heatlhBar.style.background = `linear-gradient(to right, green ${healthLeft*100}%, red 0%)`;
+    // if player loses
     if(player.currHealth == 0) {
-        floor = 0;
-        newFloor();
-        run();
-        heatlhBar.style.background = `linear-gradient(to right, green 100%, red 0%)`;
         player.currHealth = player.maxHealth;
+        localStorage.player = player;
+        window.location = "index.html";
+        // floor = 0;
+        // newFloor();
+        // run();
+        // heatlhBar.style.background = `linear-gradient(to right, green 100%, red 0%)`;
     }
 }
 

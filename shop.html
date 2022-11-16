@@ -1,9 +1,52 @@
 <html>
     <head>
         <title>Shop</title>
+        <script src="rpg.js"></script>
         <script src="script.js"></script>
+        <script src="shop.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        
+        <button onclick="home()">Leave Shop</button>
+        <div class="container">
+            <div id="player" class="inventory">
+                <h3>Player Inventory: <a id="player-inv-gold">0</a>G</h3>
+                <table id="player-inventory" num="0">
+                    <tr>
+                        <td>Sell</td>
+                        <td class="item">Name</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="player-sell" class="inventory">
+                <h4>Total gold: <a id="player-gold">0</a></h4>
+                <table id="player-sell-inventory">
+                    <tr>
+                        <td class="button">Remove</td>
+                        <td class="item">Name</td>
+                    </tr>
+                </table>
+    
+            </div>
+            <div id="shop-sell" class="inventory">
+                <h4>Total gold: <a id="shop-gold">0</a></h4>
+                <table id="shop-sell-inventory">
+                    <tr>
+                        <td class="button">Remove</td>
+                        <td class="item">Name</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="shop" class="inventory">
+                <h3>Shop Inventory: <a id="shop-inv-gold">1000</a>G</h3>
+                <table id="shop-inventory">
+                    <tr>
+                        <td class="button">Buy</td>
+                        <td class="item">Name</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <button id="sell" onclick="sell()">Complete Transaction</button>
     </body>
 </html>

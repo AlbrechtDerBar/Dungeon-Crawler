@@ -12,6 +12,7 @@ class Player {
         this.eqWeapon = eqWeapon;
         this.spellList = spellList;
         this.inventory = playerinv;
+        this.gold = 0;
     }
 
     lowerHealth(dmg) {
@@ -74,6 +75,8 @@ class Weapon {
         this.name = name;
         this.element = element;
         this.atk = atk;
+        this.value = 5 * this.atk + 5;
+        this.type = "weapon";
     }
 }
 
@@ -82,6 +85,8 @@ class Armor {
         this.name = name;
         this.resistance = resistance;
         this.def = def;
+        this.value = 5 * this.def + 5;
+        this.type = "armor";
     }
 }
 
@@ -171,14 +176,29 @@ function createItem(itemArr) {
     return item;
 }
 
+function lootGen() {
+    let rnd = Math.floor(Math.random() * 2);
+    let itemArr;
+    if(rnd == 0) {
+        itemArr = armorTypes;
+    }
+    else {
+        itemArr = weaponTypes;
+    }
+    let item = createItem(weaponTypes);
+    return item;
+}
+
 let armorTypes = ["Helm", "Helmet", "Pauldron", "Curiass", "Vambrace", "Gauntlet", "Greaves", "Mail", "Great helm", "Sallet", "Armet", "Bevor", "Gorget", "Brigandine", "Breastplate", "Codpiece"];
 let weaponTypes = ["Stick", "Knife", "Club", "Ax", "Sword", "Spear", "Halberd", "Boomerang", "Crossbow", "Bolo", "Grenade", "Spear", "Bow", "Artillery", "Cannon", "Rocket", "Missle", "Torpedo", "Revolver", "Rifle", "Shotgun", "Machine Gun", "Tank", "Airplane", "Landmine", "Longsword", "Shortsword", "Mace", "Dagger", "Bayonet", "Machete", "Hatchet", "Pitchfork", "Sickle", "Scythe", "Khopesh", "Takoba", "Katana", "Odachi", "Kunai", "Tanto", "Wakizashi", "Kalis"];
+
 let descriptor =["Water", "Fire", "Wetness", "Heat", "Grass", "Grassiness"];
 let names = ["Misk", "Omettia", "Geia", "Jeralia", "Ovisia", "Kehsi", "Bafon", "Kaian", "Shawth",  "Ayn", "Varant", "Peri", "Nydd", "Leiea", "Orthur", "Novius", "Napari", "Veric", "Astram", "Tasia", "Gwaelon", "Mailia", "Adanrandir", "Clatharla", "Hatharal", "Norodiir", "Reysalor", "Bofa", "Deez"];
-let enemyNames = ['Rat'];
-var enemies = [];
 
-var playerinv = {
+let enemyNames = ['Rat'];
+let enemies = [];
+
+let playerinv = {
     weapons: [weapons[0], weapons[1]],
     armor: [armor[0], armor[1]],
 }

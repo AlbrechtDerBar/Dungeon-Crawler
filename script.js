@@ -1,11 +1,16 @@
-var player = new Player("Hero", 1, playerinv.weapons[1], playerinv.armor[1], []);
+if(localStorage.getItem('player') == null) {
+    localStorage.setItem("player", JSON.stringify(new Player("Hero", 1, playerinv.weapons[1], playerinv.armor[1], [])));
+}
+let player = Object.assign(new Player, JSON.parse(localStorage.getItem("player")))
 
 function savePlayer() {
-    let a = document.getElementById("saveButton");
-    let file = new Blob([JSON.stringify(player)], {type: 'text/JSON'});
-    a.href = URL.createObjectURL(file);
-    a.download = "player.JSON";
-    a.click();
+    // Manual Player obj download
+    // let a = document.getElementById("saveButton");
+    // let file = new Blob([JSON.stringify(player)], {type: 'text/JSON'});
+    // a.href = URL.createObjectURL(file);
+    // a.download = "player.JSON";
+    // a.click();
+    localStorage.player = JSON.stringify(player);
 }
 
 function getFile() {
@@ -34,4 +39,12 @@ function focusDiv(id) {
             divs[i].style.display = "none";
         }
     }
+}
+
+function home() {
+    savePlayer();
+    let a = document.createElement('a');
+    a.setAttribute('href', "index.html");
+    document.body.appendChild(a);
+    a.click();
 }

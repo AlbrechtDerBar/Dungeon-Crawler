@@ -46,3 +46,51 @@ table {
     margin-top: 15px;
     background-color: beige;
 }
+
+.container {
+    display: flex;
+}
+
+.inventory {
+    width: 24%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 1%;
+    text-align: center;
+}
+
+.item {
+    position: relative;
+    width: auto;
+    user-select: none;
+}
+
+.item .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: white;
+    border: 0.5px solid black;
+    text-align: center;
+    border-radius: 6px;
+    margin-left: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+.item:hover .tooltiptext {
+    visibility: visible;
+}
+
+.button {
+    width: 25%;
+    user-select: none;
+}
+
+button {
+    user-select: none;
+}
+
+#sell {
+    padding-left: 45%;
+    padding-right: 45%;
+}

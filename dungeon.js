@@ -1,19 +1,19 @@
-var floor = 0;
-var map = [];
-var fullMap = [];
-var renderedMap = [];
-var exit;
-var validSpawn;
-var spawned = true;
-var spawn;
-var charPos = {row:-1, col:-1};
-var h = 5;
-var w = 5;
-var rH = 4;
-var rW = 3;
-var held = false;
-var tmpEntity;
-var battleXp = 0;
+let floor = 0;
+let map = [];
+let fullMap = [];
+let renderedMap = [];
+let exit;
+let validSpawn;
+let spawned = true;
+let spawn;
+let charPos = {row:-1, col:-1};
+let h = 5;
+let w = 5;
+let rH = 4;
+let rW = 3;
+let held = false;
+let tmpEntity;
+let battleXp = 0;
 
 onload = function() {
     newFloor();
@@ -203,28 +203,17 @@ function emptyBattleTable() {
 function addLoot() {
     let type = Math.floor(Math.random() * 2);
     let itemArr;
-    let container;
     let inv;
-    let stat;
     if(type == 0) {
         itemArr = weaponTypes;
-        container = "weapons";
-        type = "weapon";
         inv = player.inventory.weapons;
     }
     else {
         itemArr = armorTypes;
-        container = "armor";
-        type = "armor";
+
         inv = player.inventory.armor;
     }
     let item = createItem(itemArr);
-    if(type == "weapon") {
-        stat = item.atk
-    }
-    else {
-        stat = item.def;
-    }
     inv.push(item);
 }
 

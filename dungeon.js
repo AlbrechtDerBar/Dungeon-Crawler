@@ -248,9 +248,6 @@ function equip(elem) {
 }
 
 function loadInventory() {
-    console.log("loading inventory...");
-    console.log(player.inventory.weapons.length);
-    console.log(player.inventory.armor.length);
     for(i = 0; i < player.inventory.weapons.length; i++) {
         let row = document.querySelector(`#weapons > form`);
         let itemNum = row.getAttribute('num');
@@ -268,7 +265,7 @@ function loadInventory() {
         row.appendChild(input);
         row.appendChild(label);
         row.appendChild(br);
-        if(player.inventory.weapons[i] == player.eqWeapon) {
+        if(JSON.stringify(player.inventory.weapons[i]), JSON.stringify(player.eqWeapon)) {
             input.checked = true;
         }
         itemNum = parseInt(itemNum) + 1;
@@ -291,7 +288,7 @@ function loadInventory() {
         row.appendChild(input);
         row.appendChild(label);
         row.appendChild(br);
-        if(player.inventory.armor[i] == player.eqArmor) {
+        if(JSON.stringify(player.inventory.armor[i]), JSON.stringify(player.eqArmor)) {
             input.checked = true;
         }
         itemNum = parseInt(itemNum) + 1;

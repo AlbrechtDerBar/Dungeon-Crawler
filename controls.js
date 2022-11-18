@@ -55,9 +55,11 @@ function move(key) {
         case 'Escape':
             let settings = document.getElementById('settings');
             if(settings.style.display == "none") {
+                unloadInventory();
                 focusDiv("settings");
             }
             else {
+                unloadInventory();
                 focusDiv("renderedMap")
             }
             outBounds = true;

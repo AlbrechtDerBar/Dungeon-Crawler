@@ -13,21 +13,22 @@ function savePlayer() {
     localStorage.player = JSON.stringify(player);
 }
 
-function getFile() {
-    let load = document.getElementById("loadButton");
-    load.click();
-}
+// function getFile() {
+//     let load = document.getElementById("loadButton");
+//     load.click();
+// }
 
-function loadPlayer(evt) {
-    let fr = new FileReader();
-    let file = evt.files[0];
-    fr.readAsText(file);
-    fr.onload = function(e) {
-        player = JSON.parse(e.target.result);
-    }
-    fr.error = function() {
-        console.log("there was an error processing your file.");
-    }
+function loadPlayer() {
+    // let fr = new FileReader();
+    // let file = evt.files[0];
+    // fr.readAsText(file);
+    // fr.onload = function(e) {
+    //     player = JSON.parse(e.target.result);
+    // }
+    // fr.error = function() {
+    //     console.log("there was an error processing your file.");
+    // }
+    player = Object.assign(new Player, JSON.parse(localStorage.getItem("player")));
 }
 
 // takes the id of the only div that should be shown and hides all other divs

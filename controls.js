@@ -383,12 +383,12 @@ function interact() {
                 battle(entities[0].row, entities[0].col);
             }
         }
-        if(entities.length == 0 || entities.some(e => {return e.entity = "to"})) {
+        if((entities.length > 0 && entities.some(e => e.entity == "to")) || entities.length == 0) {
             if(reachedExit()) {
                 newFloor();
             }
             else if(onSpawn()) {
-                window.location = "index.html";
+                home();
             }
         }
 }
@@ -453,6 +453,7 @@ function attack() {
     heatlhBar.style.background = `linear-gradient(to right, green ${healthLeft*100}%, red 0%)`;
     if(hitEnemy.currHealth == 0) {
         battleXp += hitEnemy.xp;
+        battleGold += hitEnemy.gold;
         enemies.splice(parseInt(currentSelection.getAttribute("index")), 1);
         let item = document.getElementById(`enemy${currentSelection.getAttribute("index")}i`);
         item.style.backgroundColor = "";
@@ -469,7 +470,9 @@ function attack() {
     if(enemies.length == 0) {
         controlType = 0;
         player.addXp(battleXp);
+        player.addGold(battleGold);
         battleXp = 0;
+        battleGold = 0;
         run();
     }
     else {

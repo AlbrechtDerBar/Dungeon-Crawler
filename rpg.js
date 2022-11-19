@@ -38,6 +38,10 @@ class Player {
         }
     }
 
+    addGold(totalGold) {
+        this.gold += totalGold;
+    }
+
     levelUp() {
         player = new Player(this.name, this.level+1, this.eqWeapon, this.eqArmor, this.spellList);
         player.currXp = this.currXp;
@@ -53,6 +57,7 @@ class Enemy {
         this.atk = 0 + this.level;
         this.def = 0 + this.level;
         this.xp = 5 * this.level;
+        this.gold = 2 * this.level;
         this.element = element;
         this.resistance = element;
     }

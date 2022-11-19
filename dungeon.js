@@ -14,6 +14,7 @@ let rW = 3;
 let held = false;
 let tmpEntity;
 let battleXp = 0;
+let battleGold = 0;
 
 onload = function() {
     newFloor();

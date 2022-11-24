@@ -204,3 +204,16 @@ function minBet() {
 function maxBet() {
     document.getElementById("bet").value = player.gold;
 }
+
+function showDiv(node) {
+    let value = node.getAttribute('value');
+    let games = document.querySelectorAll('.game-container');
+    for(let i = 0; i < games.length; i++) {
+        if(games[i].id == value) {
+            games[i].style.display = "";
+        }
+        else {
+            games[i].style.display = "none";
+        }
+    }
+}

@@ -8,74 +8,77 @@
     </head>
     <body>
         <button onclick="home()">Leave Casino</button>
+        <button value="roulette" onclick="showDiv(this)">Roulette</button>
         <h2>Player Gold: <a id="gold">0</a>G</h2>
-        <div id="table">
-            <div id="box1">
-                <div class="leftSide">
-                    <div id="P12" class="blue bet div7 left">1st 12</div>
-                    <div id="M12" class="blue bet div8 left">2nd 12</div>
-                    <div id="D12" class="blue bet div9 left">3rd 12</div>
-                    <div id="low" class="blue bet div1 left">1 to 18</div>
-                    <div id="even" class="blue bet div2 left">EVEN</div>
-                    <div id="red" class="red bet div3 left">RED</div>
-                    <div id="black" class="black bet div4 left">BLACK</div>
-                    <div id="odd" class="blue bet div5 left">ODD</div>
-                    <div id="high" class="blue bet div6 left">19 to 36</div>
-                </div>
-            </div>
-            <div id="box2">
-                <div class="parent">
-                    <div class="div10">
-                        <div id="0" class="green bet">0</div>
-                        <div id="00" class="green bet">00</div>
+        <div id="roulette" class="game-container" style="display: none;">
+            <div id="table">
+                <div id="box1">
+                    <div class="leftSide">
+                        <div id="P12" class="blue bet div7 left">1st 12</div>
+                        <div id="M12" class="blue bet div8 left">2nd 12</div>
+                        <div id="D12" class="blue bet div9 left">3rd 12</div>
+                        <div id="low" class="blue bet div1 left">1 to 18</div>
+                        <div id="even" class="blue bet div2 left">EVEN</div>
+                        <div id="red" class="red bet div3 left">RED</div>
+                        <div id="black" class="black bet div4 left">BLACK</div>
+                        <div id="odd" class="blue bet div5 left">ODD</div>
+                        <div id="high" class="blue bet div6 left">19 to 36</div>
                     </div>
-                    <div id="1" class="red bet div11">1</div>
-                    <div id="2" class="black bet div12">2</div>
-                    <div id="3" class="red bet div13">3</div>
-                    <div id="4" class="black bet div14">4</div>
-                    <div id="5" class="red bet div15">5</div>
-                    <div id="6" class="black bet div16">6</div>
-                    <div id="7" class="red bet div17">7</div>
-                    <div id="8" class="black bet div18">8</div>
-                    <div id="9" class="red bet div19">9</div>
-                    <div id="10" class="black bet div20">10</div>
-                    <div id="11" class="black bet div21">11</div>
-                    <div id="12" class="red bet div22">12</div>
-                    <div id="13" class="black bet div23">13</div>
-                    <div id="14" class="red bet div24">14</div>
-                    <div id="15" class="black bet div25">15</div>
-                    <div id="16" class="red bet div26">16</div>
-                    <div id="17" class="black bet div27">17</div>
-                    <div id="18" class="red bet div28">18</div>
-                    <div id="19" class="red bet div29">19</div>
-                    <div id="20" class="black bet div30">20</div>
-                    <div id="21" class="red bet div31">21</div>
-                    <div id="22" class="black bet div32">22</div>
-                    <div id="23" class="red bet div33">23</div>
-                    <div id="24" class="black bet div34">24</div>
-                    <div id="25" class="red bet div35">25</div>
-                    <div id="26" class="black bet div36">26</div>
-                    <div id="27" class="red bet div37">27</div>
-                    <div id="28" class="black bet div38">28</div>
-                    <div id="29" class="black bet div39">29</div>
-                    <div id="30" class="red bet div40">30</div>
-                    <div id="31" class="black bet div41">31</div>
-                    <div id="32" class="red bet div42">32</div>
-                    <div id="33" class="black bet div43">33</div>
-                    <div id="34" class="red bet div44">34</div>
-                    <div id="35" class="black bet div45">35</div>
-                    <div id="36" class="red bet div46">36</div>
-                    <div id="c1" class="blue bet div47">2:1</div>
-                    <div id="c2" class="blue bet div48">2:1</div>
-                    <div id="c3" class="blue bet div49">2:1</div>
+                </div>
+                <div id="box2">
+                    <div class="parent">
+                        <div class="div10">
+                            <div id="0" class="green bet">0</div>
+                            <div id="00" class="green bet">00</div>
+                        </div>
+                        <div id="1" class="red bet div11">1</div>
+                        <div id="2" class="black bet div12">2</div>
+                        <div id="3" class="red bet div13">3</div>
+                        <div id="4" class="black bet div14">4</div>
+                        <div id="5" class="red bet div15">5</div>
+                        <div id="6" class="black bet div16">6</div>
+                        <div id="7" class="red bet div17">7</div>
+                        <div id="8" class="black bet div18">8</div>
+                        <div id="9" class="red bet div19">9</div>
+                        <div id="10" class="black bet div20">10</div>
+                        <div id="11" class="black bet div21">11</div>
+                        <div id="12" class="red bet div22">12</div>
+                        <div id="13" class="black bet div23">13</div>
+                        <div id="14" class="red bet div24">14</div>
+                        <div id="15" class="black bet div25">15</div>
+                        <div id="16" class="red bet div26">16</div>
+                        <div id="17" class="black bet div27">17</div>
+                        <div id="18" class="red bet div28">18</div>
+                        <div id="19" class="red bet div29">19</div>
+                        <div id="20" class="black bet div30">20</div>
+                        <div id="21" class="red bet div31">21</div>
+                        <div id="22" class="black bet div32">22</div>
+                        <div id="23" class="red bet div33">23</div>
+                        <div id="24" class="black bet div34">24</div>
+                        <div id="25" class="red bet div35">25</div>
+                        <div id="26" class="black bet div36">26</div>
+                        <div id="27" class="red bet div37">27</div>
+                        <div id="28" class="black bet div38">28</div>
+                        <div id="29" class="black bet div39">29</div>
+                        <div id="30" class="red bet div40">30</div>
+                        <div id="31" class="black bet div41">31</div>
+                        <div id="32" class="red bet div42">32</div>
+                        <div id="33" class="black bet div43">33</div>
+                        <div id="34" class="red bet div44">34</div>
+                        <div id="35" class="black bet div45">35</div>
+                        <div id="36" class="red bet div46">36</div>
+                        <div id="c1" class="blue bet div47">2:1</div>
+                        <div id="c2" class="blue bet div48">2:1</div>
+                        <div id="c3" class="blue bet div49">2:1</div>
+                    </div>
                 </div>
             </div>
+            <button onclick="minBet()">MIN</button>
+            <label for="bet">Bet: $</label>
+            <input type="number" id="bet" min="1">
+            <button onclick="maxBet()">MAX</button>
+            <button onclick="bet()">BET</button>
+            <button onclick="clearBets()">CLEAR BETS</button>
         </div>
-        <button onclick="minBet()">MIN</button>
-        <label for="bet">Bet: $</label>
-        <input type="number" id="bet" min="1">
-        <button onclick="maxBet()">MAX</button>
-        <button onclick="bet()">BET</button>
-        <button onclick="clearBets()">CLEAR BETS</button>
     </body>
 </html>

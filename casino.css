@@ -1,0 +1,429 @@
+.chipR {
+    border: 1.5px solid black;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    margin-left: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chipM {
+    margin: 0px;
+    padding: 0px;
+    border: 1.5px dashed white;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-image: radial-gradient(circle, transparent 47%, white 50%, transparent 60%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chipL {
+    border: 1.5px solid black;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    user-select: none;
+}
+
+.black {
+    background-color: black;
+    justify-content: center;
+    color: white;
+    margin: 1px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.red {
+    background-color: red;
+    justify-content: center;
+    color: white;
+    margin: 1px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.green {
+    display: flex;
+    width: 48%;
+    height: 50px;
+    float: right;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 2px;
+    background-color: green;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.blue {
+    background-color: blue;
+    justify-content: center;
+    color: white;
+    margin: 1px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.bet {
+    border: 1px solid black;
+}
+
+
+#table {
+    width: 400px;
+    height: 600px;
+    display: flex;
+}
+
+#box1 {
+    width: 25%;
+    display: flex;
+}
+
+#box2 {
+    width: 75%;
+    display: flex;
+}
+
+/* divs for the left side of the grid */
+
+.leftSide {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.div1 { 
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div2 { 
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div3 { 
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div4 { 
+    grid-area: 4 / 1 / 5 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div5 { 
+    grid-area: 5 / 1 / 6 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div6 { 
+    grid-area: 6 / 1 / 7 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div7 { 
+    grid-area: 1 / 2 / 3 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div8 { 
+    grid-area: 3 / 2 / 5 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+.div9 { 
+    grid-area: 5 / 2 / 7 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    writing-mode: vertical-rl;
+}
+
+/* divs for the right side of the grid */
+.parent {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.div11 { 
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div12 { 
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div13 { 
+    grid-area: 2 / 3 / 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div14 { 
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div15 { 
+    grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div16 { 
+    grid-area: 3 / 3 / 4 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div17 { 
+    grid-area: 4 / 1 / 5 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div18 { 
+    grid-area: 4 / 2 / 5 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div19 { 
+    grid-area: 4 / 3 / 5 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div20 { 
+    grid-area: 5 / 1 / 6 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div21 { 
+    grid-area: 5 / 2 / 6 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div22 { 
+    grid-area: 5 / 3 / 6 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div23 { 
+    grid-area: 6 / 1 / 7 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div24 { 
+    grid-area: 6 / 2 / 7 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div25 { 
+    grid-area: 6 / 3 / 7 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div26 { 
+    grid-area: 7 / 1 / 8 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div27 { 
+    grid-area: 7 / 2 / 8 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div28 { 
+    grid-area: 7 / 3 / 8 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div29 { 
+    grid-area: 8 / 1 / 9 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div30 { 
+    grid-area: 8 / 2 / 9 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div31 { 
+    grid-area: 8 / 3 / 9 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div32 { 
+    grid-area: 9 / 1 / 10 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div33 { 
+    grid-area: 9 / 2 / 10 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div34 { 
+    grid-area: 9 / 3 / 10 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div35 { 
+    grid-area: 10 / 1 / 11 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div36 { 
+    grid-area: 10 / 2 / 11 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div37 { 
+    grid-area: 10 / 3 / 11 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div38 { 
+    grid-area: 11 / 1 / 12 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div39 { 
+    grid-area: 11 / 2 / 12 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div40 { 
+    grid-area: 11 / 3 / 12 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div41 { 
+    grid-area: 12 / 1 / 13 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div42 { 
+    grid-area: 12 / 2 / 13 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div43 { 
+    grid-area: 12 / 3 / 13 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div44 { 
+    grid-area: 13 / 1 / 14 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div45 { 
+    grid-area: 13 / 2 / 14 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div46 { 
+    grid-area: 13 / 3 / 14 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div47 { 
+    grid-area: 14 / 1 / 15 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div48 { 
+    grid-area: 14 / 2 / 15 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div49 { 
+    grid-area: 14 / 3 / 15 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.div10 { 
+    grid-area: 1 / 1 / 2 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}

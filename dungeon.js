@@ -17,6 +17,13 @@ let battleXp = 0;
 let battleGold = 0;
 
 onload = function() {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        // true for mobile device
+        this.document.getElementById("mobileControls").style.display = "";
+    }
+    else{
+    // false for not mobile device
+    }
     newFloor();
 }
 

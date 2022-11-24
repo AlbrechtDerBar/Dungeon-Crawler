@@ -54,3 +54,4 @@ function home() {
     document.body.appendChild(a);
     a.click();
 }
+

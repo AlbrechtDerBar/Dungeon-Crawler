@@ -31,6 +31,11 @@ function loadPlayer() {
     player = Object.assign(new Player, JSON.parse(localStorage.getItem("player")));
 }
 
+function deletePlayer() {
+    localStorage.setItem("player", JSON.stringify(new Player("Hero", 1, playerinv.weapons[1], playerinv.armor[1], [])));
+    player = Object.assign(new Player, JSON.parse(localStorage.getItem("player")));
+}
+
 // takes the id of the only div that should be shown and hides all other divs
 function focusDiv(id) {
     document.getElementById(id).style.display = "";

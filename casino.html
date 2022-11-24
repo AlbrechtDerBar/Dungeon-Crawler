@@ -8,6 +8,7 @@
     </head>
     <body>
         <button onclick="home()">Leave Casino</button>
+        <h2>Player Gold: <a id="gold">0</a>G</h2>
         <div id="table">
             <div id="box1">
                 <div class="leftSide">
@@ -25,8 +26,8 @@
             <div id="box2">
                 <div class="parent">
                     <div class="div10">
-                        <div id="zero" class="green bet">0</div>
-                        <div id="doubleZero" class="green bet">00</div>
+                        <div id="0" class="green bet">0</div>
+                        <div id="00" class="green bet">00</div>
                     </div>
                     <div id="1" class="red bet div11">1</div>
                     <div id="2" class="black bet div12">2</div>
@@ -70,6 +71,11 @@
                 </div>
             </div>
         </div>
-        <button>BET</button>
+        <button onclick="minBet()">MIN</button>
+        <label for="bet">Bet: $</label>
+        <input type="number" id="bet" min="1">
+        <button onclick="maxBet()">MAX</button>
+        <button onclick="bet()">BET</button>
+        <button onclick="clearBets()">CLEAR BETS</button>
     </body>
 </html>

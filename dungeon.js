@@ -266,7 +266,7 @@ function loadInventory() {
         row.appendChild(input);
         row.appendChild(label);
         row.appendChild(br);
-        if(JSON.stringify(player.inventory.weapons[i]), JSON.stringify(player.eqWeapon)) {
+        if(JSON.stringify(player.inventory.weapons[i]) == JSON.stringify(player.eqWeapon)) {
             input.checked = true;
         }
         itemNum = parseInt(itemNum) + 1;
@@ -289,7 +289,7 @@ function loadInventory() {
         row.appendChild(input);
         row.appendChild(label);
         row.appendChild(br);
-        if(JSON.stringify(player.inventory.armor[i]), JSON.stringify(player.eqArmor)) {
+        if(JSON.stringify(player.inventory.armor[i]) == JSON.stringify(player.eqArmor)) {
             input.checked = true;
         }
         itemNum = parseInt(itemNum) + 1;

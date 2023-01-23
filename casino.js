@@ -167,7 +167,7 @@ function calculateGold() {
             total += bet*getOdds(playerBets[i]);
         }
         else {
-            total -= bet*getOdds(playerBets[i]);
+            total -= bet;
         }
     }
     winningBets = [];
